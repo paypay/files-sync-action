@@ -22,7 +22,7 @@ const main = async () => {
 		);
 		showLogs(SRC_REPO);
 
-		await new Promise((resolve) => setTimeout(resolve, 5000));
+		await new Promise((resolve) => setTimeout(resolve, 60000));
 
 		// EXEC IN TARGET REPOS
 		await Promise.all(

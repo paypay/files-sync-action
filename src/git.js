@@ -98,7 +98,7 @@ module.exports = {
 				} finally {
 					if (!output.includes("Update file(s) from")) {
 						logger.error(output);
-						throw new Error("failed to commit changes");
+						//throw new Error("failed to commit changes");
 					}
 				}
 			}
