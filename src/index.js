@@ -22,7 +22,7 @@ const main = async () => {
 		);
 		showLogs(SRC_REPO);
 
-		await new Promise((resolve) => setTimeout(resolve, 120000));
+		await new Promise((resolve) => setTimeout(resolve, 30000));
 
 		// EXEC IN TARGET REPOS
 		await Promise.all(
@@ -32,6 +32,7 @@ const main = async () => {
 
 				// PREPARE TARGET
 				await gitRepo.clone();
+				await new Promise((resolve) => setTimeout(resolve, 30000));
 				const targetFiles = await utilsRepo.getFiles();
 				const removedFiles = targetFiles.filter(
 					(file) =>
@@ -51,6 +52,7 @@ const main = async () => {
 						)
 					),
 				]);
+				await new Promise((resolve) => setTimeout(resolve, 15000));
 
 				// COMMIT UPDATES
 				await gitRepo.commitAll();
